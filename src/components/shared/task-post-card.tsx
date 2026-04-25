@@ -79,6 +79,12 @@ const cardStyles = {
     title: 'text-[#1f2617]',
     badge: 'bg-[#1f2617] text-[#edf5dc]',
   },
+  'press-surface': {
+    frame: 'rounded-[1.25rem] border border-[#e8c8d2] bg-white shadow-[0_12px_40px_rgba(185,94,130,0.1)] hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(185,94,130,0.16)]',
+    muted: 'text-[#5c4552]',
+    title: 'text-[#2a1522]',
+    badge: 'bg-[#b95e82] text-white',
+  },
 } as const
 
 const getVariantForTask = (taskKey: TaskKey) => SITE_THEME.cards[taskKey] || 'listing-elevated'
@@ -106,9 +112,23 @@ export function TaskPostCard({
   const variant = taskKey || 'listing'
   const visualVariant = cardStyles[getVariantForTask(variant)]
   const isBookmarkVariant = variant === 'sbm' || variant === 'social'
-  const imageAspect = variant === 'image' ? 'aspect-[4/5]' : variant === 'article' ? 'aspect-[16/10]' : variant === 'pdf' ? 'aspect-[4/5]' : variant === 'classified' ? 'aspect-[16/11]' : 'aspect-[4/3]'
+  const imageAspect =
+    variant === 'image'
+      ? 'aspect-[4/5]'
+      : variant === 'article' || variant === 'mediaDistribution'
+        ? 'aspect-[16/10]'
+        : variant === 'pdf'
+          ? 'aspect-[4/5]'
+          : variant === 'classified'
+            ? 'aspect-[16/11]'
+            : 'aspect-[4/3]'
   const altText = `${post.title} ${category} ${variant === 'listing' ? 'business listing' : variant} image`
-  const imageSizes = variant === 'article' ? '(max-width: 640px) 90vw, (max-width: 1024px) 48vw, 420px' : variant === 'image' ? '(max-width: 640px) 82vw, (max-width: 1024px) 34vw, 320px' : '(max-width: 640px) 85vw, (max-width: 1024px) 42vw, 340px'
+  const imageSizes =
+    variant === 'article' || variant === 'mediaDistribution'
+      ? '(max-width: 640px) 90vw, (max-width: 1024px) 48vw, 420px'
+      : variant === 'image'
+        ? '(max-width: 640px) 82vw, (max-width: 1024px) 34vw, 320px'
+        : '(max-width: 640px) 85vw, (max-width: 1024px) 42vw, 340px'
 
   const { recipe } = getFactoryState()
   const isDirectoryProduct = recipe.homeLayout === 'listing-home' || recipe.homeLayout === 'classified-home'
