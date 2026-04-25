@@ -4,14 +4,20 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.985 0 0);
-  --foreground: oklch(0.15 0 0);
+  /* Newsprline brand (press wire) */
+  --brand-coral: #f39f9f;
+  --brand-berry: #b95e82;
+  --brand-ink: #2a1522;
+  --brand-hero-start: #0a3a4a;
+  --brand-hero-end: #0d9488;
+  --background: #faf7f8;
+  --foreground: #1a1216;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0 0);
-  --primary: oklch(0.22 0.02 255);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: #b95e82;
+  --primary-foreground: #fffafc;
   --secondary: oklch(0.96 0 0);
   --secondary-foreground: oklch(0.22 0.02 255);
   --muted: oklch(0.96 0 0);
@@ -20,9 +26,9 @@
   --accent-foreground: oklch(0.22 0.02 255);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: #edd8e0;
+  --input: #e8d4dc;
+  --ring: #b95e82;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -116,6 +122,28 @@
 }
 
 @layer base {
+  @keyframes npl-fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0.5rem, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes npl-soft-pan {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  .npl-fade-up {
+    animation: npl-fade-up 0.65s ease-out both;
+  }
   * {
     @apply border-border outline-ring/50;
   }

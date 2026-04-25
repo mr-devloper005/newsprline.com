@@ -3,7 +3,7 @@ export type HeroVariant = 'search-first' | 'spotlight-split' | 'gallery-mosaic' 
 export type HomeLayout = 'directory-stack' | 'editorial-rhythm' | 'studio-showcase' | 'market-catalog'
 export type NavigationVariant = 'compact' | 'editorial' | 'capsule' | 'minimal'
 export type FooterVariant = 'columns' | 'editorial' | 'dense' | 'minimal'
-export type TaskCardVariant = 'listing-elevated' | 'editorial-feature' | 'studio-panel' | 'catalog-grid'
+export type TaskCardVariant = 'listing-elevated' | 'editorial-feature' | 'studio-panel' | 'catalog-grid' | 'press-surface'
 export type SiteTaskKey =
   | 'listing'
   | 'classified'
@@ -44,6 +44,7 @@ export type SiteTheme = {
     social: TaskCardVariant
     org: TaskCardVariant
     comment: TaskCardVariant
+    mediaDistribution: TaskCardVariant
   }
 }
 
@@ -75,6 +76,7 @@ export const DEFAULT_SITE_THEME: SiteTheme = {
     social: 'studio-panel',
     org: 'catalog-grid',
     comment: 'editorial-feature',
+    mediaDistribution: 'editorial-feature',
   },
 }
 

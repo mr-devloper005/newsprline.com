@@ -1,93 +1,83 @@
-import Link from "next/link";
-import { PageShell } from "@/components/shared/page-shell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { mockTeamMembers } from "@/data/mock-data";
-import { SITE_CONFIG } from "@/lib/site-config";
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight, Sparkles } from 'lucide-react'
+import { NavbarShell } from '@/components/shared/navbar-shell'
+import { Footer } from '@/components/shared/footer'
+import { SITE_CONFIG } from '@/lib/site-config'
+import { buildPageMetadata } from '@/lib/seo'
 
-const highlights = [
-  { label: "Creators onboarded", value: "12k+" },
-  { label: "Bookmarks shared", value: "180k" },
-  { label: "Listings published", value: "8.6k" },
-];
-
-const values = [
-  { title: "Curated by people", description: "We believe trusted recommendations beat endless feeds." },
-  { title: "Designed for focus", description: "Clear, calm UI helps you find the next best resource fast." },
-  { title: "Built to share", description: "Collections make collaboration and knowledge flow effortless." },
-];
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata({
+    path: '/about',
+    title: 'About Newsprline',
+    description: 'How Newsprline helps teams ship press releases and keep readers aligned with a clean, media-first experience.',
+    openGraphTitle: `About ${SITE_CONFIG.name}`,
+    openGraphDescription: SITE_CONFIG.description,
+    image: SITE_CONFIG.defaultOgImage,
+  })
+}
 
 export default function AboutPage() {
   return (
-    <PageShell
-      title={`About ${SITE_CONFIG.name}`}
-      description={`${SITE_CONFIG.name} is a modern platform for creators, communities, and curated business discovery.`}
-      actions={
-        <>
-          <Button variant="outline" asChild>
-            <Link href="/team">Meet the Team</Link>
-          </Button>
-          <Button asChild>
-            <Link href="/contact">Contact Us</Link>
-          </Button>
-        </>
-      }
-    >
-      <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <Card className="border-border bg-card">
-          <CardContent className="space-y-4 p-6">
-            <Badge variant="secondary">Our Story</Badge>
-            <h2 className="text-2xl font-semibold text-foreground">
-              A single home for knowledge, discovery, and community.
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              {SITE_CONFIG.name} brings together publishing, listings, and social bookmarking so teams can move faster
-              and keep their best resources close.
+    <div className="min-h-screen bg-[#faf7f8] text-[#2a1522]">
+      <NavbarShell />
+      <div className="border-b border-[#e8c8d2] bg-white">
+        <div className="mx-auto grid max-w-5xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-2 lg:px-8">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#b95e82]">About us</p>
+            <h1 className="mt-2 font-[family-name:var(--site-font-display)] text-3xl font-semibold sm:text-4xl">
+              Clarity for every announcement
+            </h1>
+            <p className="mt-4 text-sm leading-7 text-[#5c4552] sm:text-base">
+              {SITE_CONFIG.name} is the public face for your press line: a reader-first layout, organized archive, and room for
+              the multimedia assets that make a story land. We built the experience around how teams really publish—drafts, reviews,
+              then a single moment when the news goes live.
             </p>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {highlights.map((item) => (
-                <div key={item.label} className="rounded-lg border border-border bg-secondary/40 p-4">
-                  <div className="text-2xl font-semibold text-foreground">{item.value}</div>
-                  <div className="text-xs text-muted-foreground">{item.label}</div>
-                </div>
-              ))}
+            <p className="mt-4 text-sm leading-7 text-[#5c4552]">
+              Whether you are a two-person comms shop or a distributed program with agencies, the interface stays out of the way
+              so your message stays in focus.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-[#2a1522] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#b95e82]"
+              >
+                Talk to us
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/updates" className="inline-flex items-center gap-2 text-sm font-semibold text-[#b95e82] hover:underline">
+                Read the archive
+              </Link>
             </div>
-          </CardContent>
-        </Card>
-        <div className="space-y-4">
-          {values.map((value) => (
-            <Card key={value.title} className="border-border bg-card">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-foreground">{value.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[#e8c8d2] shadow-lg">
+            <Image
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&q=80&auto=format&fit=crop"
+              alt="Communications team collaborating"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
         </div>
       </div>
-
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {mockTeamMembers.map((member) => (
-          <Card key={member.id} className="border-border bg-card transition-transform hover:-translate-y-1">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3">
-                <Avatar className="h-12 w-12">
-                  <AvatarImage src={member.avatar} alt={member.name} />
-                  <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{member.name}</p>
-                  <p className="text-xs text-muted-foreground">{member.role}</p>
-                </div>
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground">{member.bio}</p>
-              <p className="mt-3 text-xs text-muted-foreground">{member.location}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </PageShell>
-  );
+      <section className="border-b border-[#e8c8d2] bg-[#fff5f7] py-12">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-start gap-3">
+            <Sparkles className="h-5 w-5 text-[#b95e82]" />
+            <div>
+              <h2 className="text-xl font-semibold">What we optimize for</h2>
+              <ul className="mt-3 space-y-2 text-sm text-[#5c4552]">
+                <li>— Legible, premium article pages that feel at home on mobile and desktop.</li>
+                <li>— Archives that are easy to scan for investors, press, and internal teams.</li>
+                <li>— A quiet surface that does not look like a recycled directory template from another product line.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </div>
+  )
 }
