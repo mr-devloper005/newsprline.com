@@ -30,7 +30,7 @@ export function getNewsprlineLoginConfig(): AuthPageConfig {
     ...base,
     icon: Megaphone,
     title: 'Log in to Newsprline',
-    body: 'Use your work email to access the newsroom, draft press releases, and follow distribution status in one place.',
+    body: 'Use your work email to access the newsroom, draft release media, and follow distribution status in one place.',
     bullets: [
       'Be found by media and partners in your archive',
       'Tighter review flow before a story goes live',

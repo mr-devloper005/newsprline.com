@@ -35,7 +35,7 @@ export async function TaskDetailPageOverride({ task, slug }: { task: TaskKey; sl
   const category =
     typeof content.category === 'string' && content.category.trim()
       ? content.category.trim()
-      : 'Press release'
+      : 'Release media'
   const hero = getHeroImage(post)
   const sub =
     post.summary && post.summary.length < 220
@@ -78,10 +78,6 @@ export async function TaskDetailPageOverride({ task, slug }: { task: TaskKey; sl
           </h1>
           {sub ? <p className="mt-4 text-lg text-[#5c4552] sm:text-xl">{sub}</p> : null}
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[#5c4552]">
-            <time dateTime={post.publishedAt || undefined}>
-              {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-            </time>
-            <span className="text-[#d4b8c2]">·</span>
             <span>By {post.authorName || 'Newsroom'}</span>
           </div>
 
@@ -141,9 +137,6 @@ export async function TaskDetailPageOverride({ task, slug }: { task: TaskKey; sl
                     className="group block rounded-2xl border border-[#e8c8d2] bg-[#fffafc] p-4 transition hover:border-[#b95e82] hover:shadow-sm"
                   >
                     <p className="line-clamp-2 text-sm font-semibold text-[#2a1522] group-hover:text-[#b95e82]">{item.title}</p>
-                    <p className="mt-1 text-xs text-[#5c4552]">
-                      {new Date(item.publishedAt || Date.now()).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
-                    </p>
                   </Link>
                 </li>
               ))}

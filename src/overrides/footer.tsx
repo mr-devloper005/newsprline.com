@@ -10,8 +10,6 @@ const productLinks = () =>
 
 const company = [
   { label: 'About us', href: '/about' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Press kit', href: '/press' },
   { label: 'Contact', href: '/contact' },
 ]
 

@@ -2,18 +2,18 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Press release distribution',
+    tagline: 'Release media distribution',
   },
   footer: {
     tagline: 'Visibility for every announcement',
   },
   hero: {
     badge: 'Distribution platform',
-    title: ['Distribute press releases with clarity, speed, and measurable reach.'],
+    title: ['Distribute release media with clarity, speed, and measurable reach.'],
     description:
       'Send multimedia announcements to journalists, trade publications, and digital channels from one workflow built for comms and marketing teams.',
     primaryCta: {
-      label: 'View press releases',
+      label: 'View release media',
       href: '/updates',
     },
     secondaryCta: {
@@ -29,13 +29,13 @@ export const siteContent = {
   },
   home: {
     metadata: {
-      title: 'Press release distribution and media reach',
+      title: 'Release media distribution and media reach',
       description:
-        'Publish corporate announcements, product launches, and media statements with a professional press distribution experience.',
-      openGraphTitle: 'Newsprline — press release distribution',
-      openGraphDescription: 'Distribute releases, reach journalists, and keep visibility organized for your team.',
+        'Publish corporate announcements, product launches, and media statements with a professional release media distribution experience.',
+      openGraphTitle: 'Newsprline — release media distribution',
+      openGraphDescription: 'Distribute release media, reach journalists, and keep visibility organized for your team.',
       keywords: [
-        'press release distribution',
+        'release media distribution',
         'media relations',
         'public relations',
         'news wire',
@@ -45,7 +45,7 @@ export const siteContent = {
         'newsprline',
       ],
     },
-    servicesHeading: 'Press release distribution and multimedia software services',
+    servicesHeading: 'Release media distribution and multimedia software services',
     aboutTitle: 'Built for communications teams, not generic feeds',
     aboutBody:
       'Newsprline is a media-forward publishing front that pairs archive browsing with a calm, high-trust interface. Post once, follow consistent formatting, and give readers a premium reading line that matches the importance of the news.',
@@ -59,7 +59,7 @@ export const siteContent = {
   cta: {
     badge: 'Ready when you are',
     title: 'From draft review to live distribution, keep the story on-brand.',
-    description: 'Start with a press release, attach supporting media, and keep every lane aligned on timing and message.',
+    description: 'Start with a release media item, attach supporting media, and keep every lane aligned on timing and message.',
     primaryCta: {
       label: 'Contact sales',
       href: '/contact',
@@ -69,7 +69,7 @@ export const siteContent = {
       href: '/updates',
     },
   },
-  taskSectionHeading: 'Latest press releases',
+  taskSectionHeading: 'Latest release media',
   taskSectionDescriptionSuffix: 'Read recently distributed announcements.',
 } as const
 
@@ -108,7 +108,7 @@ export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'soci
     description: 'Open PDFs and downloadable files.',
   },
   mediaDistribution: {
-    title: 'Press releases',
+    title: 'Release media',
     description: 'Browse the latest distributed announcements and media updates.',
   },
 }
@@ -128,7 +128,7 @@ export const taskIntroCopy: Record<
   comment: { title: 'Comments', paragraphs: ['Commentary and response posts.'], links: [{ label: 'Home', href: '/' }] },
   org: { title: 'Organizations', paragraphs: ['Organization pages and entities.'], links: [{ label: 'Home', href: '/' }] },
   mediaDistribution: {
-    title: 'Press release archive',
+    title: 'Release media archive',
     paragraphs: [
       'Filter by topic to focus on the announcements that matter to you. Every release uses the same readable layout for consistency across your organization and partners.',
     ],

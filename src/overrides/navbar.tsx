@@ -11,11 +11,8 @@ import { cn } from '@/lib/utils'
 export const NAVBAR_OVERRIDE_ENABLED = true
 
 const staticNav = [
-  { label: 'Services', href: '/#services' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Press releases', href: '/updates' },
+  { label: 'Release media', href: '/updates' },
   { label: 'About', href: '/about' },
-  { label: 'Press kit', href: '/press' },
   { label: 'Contact', href: '/contact' },
 ]
 
