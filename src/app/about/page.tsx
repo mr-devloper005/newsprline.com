@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     path: '/about',
     title: 'About Newsprline',
-    description: 'How Newsprline helps teams ship press releases and keep readers aligned with a clean, media-first experience.',
+    description: 'How Newsprline helps teams ship release media and keep readers aligned with a clean, media-first experience.',
     openGraphTitle: `About ${SITE_CONFIG.name}`,
     openGraphDescription: SITE_CONFIG.description,
     image: SITE_CONFIG.defaultOgImage,

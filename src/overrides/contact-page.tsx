@@ -37,7 +37,7 @@ export function ContactPageOverride() {
         </div>
       </div>
       <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid gap-8">
           <div className="rounded-2xl border border-[#e8c8d2] bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-lg font-semibold">Send a message</h2>
             <form className="mt-6 space-y-4" onSubmit={openMail}>
@@ -82,41 +82,6 @@ export function ContactPageOverride() {
                 Opens your email app with a draft. Nothing is sent until you send from your mail client.
               </p>
             </form>
-          </div>
-          <div className="space-y-6 text-sm text-[#5c4552]">
-            <div className="rounded-2xl border border-[#e8c8d2] bg-[#fff5f7] p-5">
-              <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#2a1522]">
-                <Clock className="h-4 w-4 text-[#b95e82]" />
-                Business hours
-              </h3>
-              <p className="mt-2 leading-relaxed">Monday to Friday, 8:00 a.m. to 5:00 p.m. (Pacific)</p>
-            </div>
-            <div className="rounded-2xl border border-[#e8c8d2] bg-white p-5">
-              <h3 className="flex items-center gap-2 text-sm font-bold text-[#2a1522]">
-                <Mail className="h-4 w-4 text-[#b95e82]" />
-                Email
-              </h3>
-              <a className="mt-2 block text-lg font-semibold text-[#b95e82] hover:underline" href={`mailto:${deskEmail}`}>
-                {deskEmail}
-              </a>
-            </div>
-            <div className="flex items-start gap-2 rounded-2xl border border-[#e8c8d2] bg-white p-5">
-              <MapPin className="mt-0.5 h-4 w-4 text-[#b95e82]" />
-              <div>
-                <h3 className="text-sm font-bold text-[#2a1522]">Operations</h3>
-                <p className="mt-1">Remote-first team serving North America. On-site or regional sessions by request.</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-[#5c4552]">
-              <Phone className="h-4 w-4 text-[#b95e82]" />
-              <a href="tel:+18005551234" className="font-semibold text-[#2a1522]">
-                1-800-555-1234
-              </a>
-            </div>
-            <p className="text-xs text-[#5c4552]/80">
-              Prefer a faster answer? <Link href="/search" className="font-semibold text-[#b95e82] hover:underline">Search the archive</Link> or read{' '}
-              <Link href="/help" className="font-semibold text-[#b95e82] hover:underline">help</Link>.
-            </p>
           </div>
         </div>
         <div className="mt-8 rounded-2xl border border-white/20 bg-gradient-to-r from-[#b95e82] to-[#0d9488] px-5 py-4 text-sm text-white sm:px-8 sm:py-5 sm:text-base">

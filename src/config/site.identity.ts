@@ -1,7 +1,7 @@
 export const siteIdentity = {
   code: process.env.NEXT_PUBLIC_SITE_CODE || 'ow890kjro8',
   name: process.env.NEXT_PUBLIC_SITE_NAME || 'Newsprline',
-  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Press release distribution for modern teams',
+  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Release media distribution for modern teams',
   description:
     process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
     'Newsprline helps organizations publish announcements, reach journalists, and track visibility across digital channels.',

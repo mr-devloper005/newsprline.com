@@ -24,7 +24,7 @@ const solutions = [
     key: 'agency',
     title: 'PR agencies',
     desc: 'Give clients a premium reading line and a faster handoff from draft to live—without noisy social clutter.',
-    cta: { label: 'View pricing', href: '/pricing' },
+    cta: { label: 'Get in touch', href: '/contact' },
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80&auto=format&fit=crop',
     align: 'left' as const,
     bg: 'bg-[#b95e82] text-white',
@@ -40,21 +40,21 @@ const solutions = [
   },
 ]
 
-const plans = [
+const services = [
   {
-    name: 'Content Pro',
+    name: 'Press Distribution',
     accent: 'from-[#b95e82] to-[#8d4a65]',
-    features: ['Core release template', 'Category tagging', 'Archive hosting', 'Email support'],
+    features: ['Structured release templates', 'Category & tag routing', 'Archive hosting & SEO', 'Multimedia attachments'],
   },
   {
-    name: 'Media Pro',
+    name: 'Media Outreach',
     accent: 'from-[#0d9488] to-[#0a3a4a]',
-    features: ['Image and file attachments', 'Priority syndication queue', 'Rich text & tables', 'Quarterly review call'],
+    features: ['Journalist & editor targeting', 'Priority syndication queue', 'Rich text, tables & embeds', 'Engagement tracking'],
   },
   {
-    name: 'Total Pro',
-    accent: 'from-[#f39f9f] to-[#b95e82]',
-    features: ['Dedicated account contact', 'Custom distribution lists', 'Performance snapshot', 'Volume-based pricing'],
+    name: 'Communications Hub',
+    accent: 'from-[#7c3055] to-[#b95e82]',
+    features: ['Dedicated account support', 'Custom distribution lists', 'Performance snapshots', 'Team roles & audit trail'],
   },
 ]
 
@@ -109,12 +109,6 @@ export function NewsprlinePressHome({ posts, primaryTask }: { posts: SitePost[];
                 >
                   {c.hero.primaryCta.label}
                   <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/20"
-                >
-                  View plans
                 </Link>
                 <Link href={c.hero.secondaryCta.href} className="text-sm font-medium text-white/80 underline-offset-4 hover:underline">
                   {c.hero.secondaryCta.label}
@@ -195,16 +189,16 @@ export function NewsprlinePressHome({ posts, primaryTask }: { posts: SitePost[];
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#5c4552]">Pick a lane, publish multimedia assets, and route stories to the audiences that cover your industry.</p>
           </div>
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {plans.map((plan) => (
+            {services.map((service) => (
               <div
-                key={plan.name}
+                key={service.name}
                 className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#e8c8d2] bg-white shadow-[0_16px_50px_rgba(185,94,130,0.1)]"
               >
-                <div className={`bg-gradient-to-r px-5 py-4 text-white ${plan.accent}`}>
-                  <h3 className="text-lg font-bold">{plan.name}</h3>
+                <div className={`bg-gradient-to-r px-5 py-4 text-white ${service.accent}`}>
+                  <h3 className="text-lg font-bold">{service.name}</h3>
                 </div>
                 <ul className="flex flex-1 flex-col gap-3 px-5 py-6 text-sm text-[#2a1522]">
-                  {plan.features.map((f) => (
+                  {service.features.map((f) => (
                     <li key={f} className="flex items-start gap-2">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#b95e82]" />
                       {f}
@@ -213,10 +207,10 @@ export function NewsprlinePressHome({ posts, primaryTask }: { posts: SitePost[];
                 </ul>
                 <div className="border-t border-[#f3e0e6] p-5">
                   <Link
-                    href="/pricing"
+                    href="/contact"
                     className="flex w-full items-center justify-center gap-2 rounded-full bg-[#2a1522] py-2.5 text-sm font-semibold text-white transition hover:bg-[#b95e82]"
                   >
-                    Compare in detail
+                    Get in touch
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
@@ -357,7 +351,7 @@ export function NewsprlinePressHome({ posts, primaryTask }: { posts: SitePost[];
       <section className="bg-[#fff5f7] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center sm:text-left">
-            <h2 className="font-[family-name:var(--site-font-display)] text-2xl font-semibold sm:text-3xl">Latest press releases</h2>
+            <h2 className="font-[family-name:var(--site-font-display)] text-2xl font-semibold sm:text-3xl">Latest release media</h2>
             <p className="mt-2 max-w-2xl text-sm text-[#5c4552]">From the live feed: newest stories published to the archive. Filter by recency to scan what landed this week.</p>
           </div>
           {latest.length ? (
