@@ -2,9 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
-import { Footer } from '@/components/shared/footer'
 import { siteIdentity } from '@/config/site.identity'
 
 export const CONTACT_PAGE_OVERRIDE_ENABLED = true
@@ -96,7 +94,6 @@ export function ContactPageOverride() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }

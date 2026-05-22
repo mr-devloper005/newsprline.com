@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { FolderPlus } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
-import { Footer } from '@/components/shared/footer'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { BookmarkCollectionCard } from '@/components/sbm/bookmark-collection-card'
@@ -12,7 +11,7 @@ import { mockBookmarkCollections } from '@/data/mock-data'
 import type { BookmarkCollection } from '@/types'
 import { loadFromStorage, storageKeys } from '@/lib/local-storage'
 
-export default function BookmarkCollectionsPage() {
+export function BookmarkCollectionsPageClient() {
   const [storedCollections, setStoredCollections] = useState<BookmarkCollection[]>([])
   const collections = useMemo(() => {
     const map = new Map<string, BookmarkCollection>()
@@ -65,8 +64,17 @@ export default function BookmarkCollectionsPage() {
           </motion.div>
         </section>
       </main>
-
-      <Footer />
     </div>
+  )
+}
+
+import { Footer } from '@/components/shared/footer'
+
+export default async function BookmarkCollectionsPage() {
+  return (
+    <>
+      <BookmarkCollectionsPageClient />
+      <Footer />
+    </>
   )
 }
