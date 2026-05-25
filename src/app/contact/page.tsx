@@ -43,9 +43,14 @@ function getTone(kind: ReturnType<typeof getProductKind>) {
   }
 }
 
-export default function ContactPage() {
+export default async function ContactPage() {
   if (CONTACT_PAGE_OVERRIDE_ENABLED) {
-    return <ContactPageOverride />
+    return (
+      <>
+        <ContactPageOverride />
+        <Footer />
+      </>
+    )
   }
 
   const { recipe } = getFactoryState()

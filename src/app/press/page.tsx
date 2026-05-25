@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NavbarShell } from '@/components/shared/navbar-shell'
-import { Footer } from '@/components/shared/footer'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -41,7 +40,7 @@ const coverage = [
   { id: '2', outlet: 'Communications week', headline: 'Teams choose calmer press sites over noisy social-first feeds.', date: '2026' },
 ] as const
 
-export default function PressPage() {
+export function PressPageClient() {
   const { toast } = useToast()
   const [activeId, setActiveId] = useState<string | null>(null)
   const active = pressAssets.find((a) => a.id === activeId)
@@ -130,7 +129,17 @@ export default function PressPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-      <Footer />
     </div>
+  )
+}
+
+import { Footer } from '@/components/shared/footer'
+
+export default async function PressPage() {
+  return (
+    <>
+      <PressPageClient />
+      <Footer />
+    </>
   )
 }
