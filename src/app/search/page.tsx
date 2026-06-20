@@ -72,7 +72,7 @@ export default async function SearchPage({
   const results = normalized.length > 0 ? filtered : filtered.slice(0, 24);
 
   return (
-    <div className="min-h-screen bg-[#faf7f8] text-[#2a1522]">
+    <div className="flex min-h-screen flex-col bg-[#faf7f8] text-[#2a1522]">
       <NavbarShell />
       <div className="border-b border-[#e8c8d2] bg-white">
         <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-6 lg:px-8">
@@ -101,7 +101,7 @@ export default async function SearchPage({
           </form>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         {results.length ? (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {results.map((post) => {
